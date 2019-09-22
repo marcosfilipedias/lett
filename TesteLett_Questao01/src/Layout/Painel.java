@@ -9,12 +9,10 @@ public class Painel extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton vacaBtn = new JButton("Vaca");
-	JButton morcegoBtn = new JButton("Morcego");
-	JButton patoBtn = new JButton("Pato");
-	JButton galinhaBtn = new JButton("Galinha");
-	JButton vacaAmamentar = new JButton("vaca Amamentar");
-	JButton morcegoAmamentar = new JButton("morcego Amamentar");
+	JButton cowBtn = new JButton("Vaca");
+	JButton batBtn = new JButton("Morcego");
+	JButton duckBtn = new JButton("Pato");
+	JButton chickenBtn = new JButton("Galinha");
 		
 	private static String cor() {
 		String cor = JOptionPane.showInputDialog("Qual a cor do animal");
@@ -37,53 +35,53 @@ public class Painel extends JFrame{
 		setResizable(false);
 		setVisible(true);
 		setLayout(null);
-		vacaBtn.setBounds(10,10,100,30);
-		morcegoBtn.setBounds(120,10,100,30);
-		patoBtn.setBounds(230,10,100,30);
-		galinhaBtn.setBounds(340,10,100,30);
+		cowBtn.setBounds(10,10,100,30);
+		batBtn.setBounds(120,10,100,30);
+		duckBtn.setBounds(230,10,100,30);
+		chickenBtn.setBounds(340,10,100,30);
 		
-		vacaBtn.addActionListener(new ActionListener() {		
+		cowBtn.addActionListener(new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Vaca vaca = new Vaca(Painel.idade(),Painel.tamanho(),Painel.cor());
-				JOptionPane.showMessageDialog(null, "Vaca\nIdade: "+vaca.getIdade()+"\nTamanho: "+vaca.getTamanho()+"m" + "\nCor dos pelos: "+vaca.getCorPelos());
-				vaca.amamentar();
-				vaca.somEmitido();
+				Cow cow = new Cow(Painel.idade(),Painel.tamanho(),Painel.cor());
+				JOptionPane.showMessageDialog(null, "Vaca\nIdade: "+cow.getAge()+"\nTamanho: "+cow.getSize()+"m" + "\nCor dos pelos: "+cow.getColor());
+				cow.breastfeed();
+				cow.song();
 			}
 		});
-		morcegoBtn.addActionListener(new ActionListener() {
+		batBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Morcego morcego = new Morcego(Painel.idade(),Painel.tamanho(),Painel.cor());
-				JOptionPane.showMessageDialog(null, "Morcego\nIdade: "+morcego.getIdade()+"\nTamanho: "+morcego.getTamanho()+"m" + "\nCor dos pelos: "+morcego.getCorPelos());
-				morcego.amamentar();
-				morcego.voar();
-				morcego.somEmitido();
+				Bat bat = new Bat(Painel.idade(),Painel.tamanho(),Painel.cor());
+				JOptionPane.showMessageDialog(null, "Morcego\nIdade: "+bat.getAge()+"\nTamanho: "+bat.getSize()+"m" + "\nCor dos pelos: "+bat.getColor());
+				bat.breastfeed();;
+				bat.fly();
+				bat.song();
 			}
 		});
-		patoBtn.addActionListener(new ActionListener() {
+		duckBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Pato pato = new Pato(Painel.idade(),Painel.tamanho(),Painel.cor());
-				JOptionPane.showMessageDialog(null, "Pato\nIdade: "+pato.getIdade()+"\nTamanho: "+pato.getTamanho()+"m" + "\nCor das penas: "+pato.getCorPenas());
-				pato.voar();
-				pato.botarOvos();
-				pato.somEmitido();
+				Duck duck = new Duck(Painel.idade(),Painel.tamanho(),Painel.cor());
+				JOptionPane.showMessageDialog(null, "Pato\nIdade: "+duck.getAge()+"\nTamanho: "+duck.getSize()+"m" + "\nCor das penas: "+duck.getFeather());
+				duck.fly();
+				duck.layEggs();
+				duck.song();
 			}
 		});
-		galinhaBtn.addActionListener(new ActionListener() {
+		chickenBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Galinha galinha = new Galinha(Painel.idade(),Painel.tamanho(),Painel.cor());
-				JOptionPane.showMessageDialog(null, "Galinha\nIdade: "+galinha.getIdade()+"\nTamanho: "+galinha.getTamanho()+"m" + "\nCor das penas: "+galinha.getCorPenas());
-				galinha.botarOvos();
-				galinha.somEmitido();
+				Chicken chicken = new Chicken(Painel.idade(),Painel.tamanho(),Painel.cor());
+				JOptionPane.showMessageDialog(null, "Galinha\nIdade: "+chicken.getAge()+"\nTamanho: "+chicken.getSize()+"m" + "\nCor das penas: "+chicken.getFeather());
+				chicken.layEggs();
+				chicken.song();
 			}
 		});
 		
-		add(vacaBtn);
-		add(morcegoBtn);
-		add(patoBtn);
-		add(galinhaBtn);
+		add(cowBtn);
+		add(batBtn);
+		add(duckBtn);
+		add(chickenBtn);
 	}
 }

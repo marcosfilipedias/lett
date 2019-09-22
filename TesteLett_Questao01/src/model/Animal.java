@@ -2,25 +2,29 @@ package model;
 
 public abstract class Animal {
 
-	private int idade;
-	private float tamanho;
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public float getTamanho() {
-		return tamanho;
-	}
-	public void setTamanho(float tamanho) {
-		this.tamanho = tamanho;
-	}
+	private int age;
+	private float size;
 	
-	public abstract void somEmitido();
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public float getSize() {
+		return size;
+	}
+
+	public void setSize(float size) {
+		this.size = size;
+	}
+
+	public abstract void song();
 	
-	public Animal(int idade, float tamanho) {
-		this.setIdade(idade);
-		this.setTamanho(tamanho);
+	public Animal(int age, float size) {
+		this.setAge(age);
+		this.setSize(size);
 	}
 }
